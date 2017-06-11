@@ -1,6 +1,6 @@
 'use strict';
 
-function header(update) {
+function header (update) {
 	var container = $('<header>',{ 
 		id: 'app-header'
 	});  
@@ -18,9 +18,10 @@ function header(update) {
 		html:'Tienes 5 oportunidades antes de perder 1 punto y pasar a la siguiente.' 
 	});  
 
-	container.append(title);
-	 container.append(description); 
-	container.append(reglas);  
+	container
+		.append(title)
+		.append(description)
+		.append(reglas);  
 
 	return container;
 }

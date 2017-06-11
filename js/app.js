@@ -7,7 +7,9 @@ function render(root) {
 	});
 
 	//Append de componentes
-	wrapper.append(header());
+	wrapper
+		.append(header())
+		.append(select());
 
 	root.append(wrapper);
 }
