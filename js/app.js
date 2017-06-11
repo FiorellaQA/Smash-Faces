@@ -7,7 +7,7 @@ function render(root) {
 	});
 
 	//Append de componentes
-	..
+	wrapper.append(header());
 
 	root.append(wrapper);
 }
