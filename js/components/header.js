@@ -1,6 +1,6 @@
 'use strict';
 
-function header (update) {
+function header () {
 	var container = $('<header>',{ 
 		id: 'app-header'
 	});  

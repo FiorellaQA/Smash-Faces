@@ -4,7 +4,7 @@
 	box-sizing:border-box;
 }
 
-.container
+.container, .container2
 {
 	width: 80%;
 	margin: 0 auto;
@@ -14,4 +14,15 @@
 {
 	display: flex;
 	justify-content:space-between;
+}
+img
+{
+	width: 100%;
+}
+.containerRight{
+	height: 350px;
+	background-color: #333333;
+}
+.containerRight label{
+	color:#fff;
 }

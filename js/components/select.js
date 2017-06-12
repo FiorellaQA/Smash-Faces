@@ -11,20 +11,35 @@ function select (update) {
 		html:'Elige tu sede: '
 	});
 
-	var select = $('<select>');
+	var select = $('<select>',{
+		id: 'select',
+		name: 'hola'
+	});
+
+	var optionDefault = $('<option>',{
+		hidden: '',
+		html: 'Seleccione una opción'
+	});
 
 	var optionPeru = $('<option>',{
 		value: 'peru',
 		html: 'Peru'
 	});
+
 	var optionMexico = $('<option>',{
 		value: 'mexico',
-		html: 'Mexico'
+		html: 'Mexico',
+		checked: 'checked'
 	});
 
 	select
+		.append(optionDefault)
 		.append(optionMexico)
-		.append(optionPeru);
+		.append(optionPeru)
+		.on('change', function (e) {
+			e.preventDefault();
+			update($(this).val());
+		});
 
 	containerSelect
 		.append(label)
