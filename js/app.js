@@ -17,18 +17,18 @@ function render(root) {
 		}
 
 		if(pais != null) {
-			$(".container2")
+			$(".wrapper2")
 				.empty()
 				.append(print(pais));
 		}
 	};
 
 	var wrapper = $('<div>',{
-		class: 'container'
+		class: 'wrapper'
 	});
 
 	var wrapper2 = $('<div>',{
-		class: 'container2'
+		class: 'wrapper2'
 	});
 
 	//Append de componentes

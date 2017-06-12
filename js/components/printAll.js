@@ -21,7 +21,7 @@ function print(pais) {
 	containerLeft.append(contentImage);
 
 	/*
-	* Contenedor Derecho
+	* Contenedor Derecho state.selectedSede[0].students
 	*/
 	var containerRight = $('<div>',{
 		class: 'col-md-6 containerRight'
@@ -47,32 +47,35 @@ function print(pais) {
 
 	console.log(imagenRandom.name);
 
+	var puntaje = 0;
+	var oportunidades = 0;
+	var spanPuntaje = $('#contadorPuntos');
 
 
 	button.on('click',function(e) {
 		e.preventDefault();
 
-		if (input.val() == imagenRandom.name) {
-			alert("si");
+		if (input.val().toLowerCase() == imagenRandom.name.toLowerCase()) {
+			alert("Excelente Acertaste");
+			oportunidades = 0;
+			puntaje = puntaje + 5;
+
+			setTimeout(function(){
+				$(".wrapper2")
+					.empty()
+					.append(print(pais));
+			},2000);
 		} else {
-			alert("no");
-
+			alert("Sigue intentando");
+			oportunidades = oportunidades + 1;
+			if(oportunidades == 5){
+				puntaje = puntaje - 1;
+				oportunidades = 0;
+			}
 		}
+		input.val('');
+		spanPuntaje.text(puntaje);
 	});
-
-	// var contador = 0;
-	// 	while (contador<5) {
-	// 		contador++;
-	// 		if(input.val() == imagenRandom.name){
-	// 			alert("si");
-	//
-	// 		}else{
-	// 			alert("no");
-	//
-	// 		}
-	//
-	// 	}
-
 
 
 	containerInput

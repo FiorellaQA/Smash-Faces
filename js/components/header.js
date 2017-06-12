@@ -1,27 +1,36 @@
 'use strict';
 
 function header () {
-	var container = $('<header>',{ 
-		id: 'app-header'
-	});  
+	var container = $('<header>');
+
+	var row = $('<div>',{
+		class: 'row container'
+	});
+
+	var col = $('<div>',{
+		class: 'col-md-12'
+	});
 
 	var title = $('<h1>',{ 
 		html:'Smash Faces' 
 	});  
 
+	var hr = $('<hr>');
+
 	var description = $('<p>',{ 
 		html:'Bienvenidad al juego de Smash Faces, tu misión es poder identificar a todas tus compañeras de clase,' + 
-		'ingresando su nombre.' 
+		'ingresando su nombre. Tienes 5 oportunidades antes de perder 1 punto y pasar a la siguiente.' 
 	});
 
-	 var reglas = $('<p>',{ 
-		html:'Tienes 5 oportunidades antes de perder 1 punto y pasar a la siguiente.' 
-	});  
 
-	container
+	col
 		.append(title)
-		.append(description)
-		.append(reglas);  
+		.append(hr)
+		.append(description);
+
+	row.append(col);
+
+	container.append(row);
 
 	return container;
 }
