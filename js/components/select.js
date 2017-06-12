@@ -1,17 +1,20 @@
 'use strict';
 
 function select (update) {
-	var containerSection = $('<section>');
+	var containerSection = $('<section>',{
+		id: 'app-select'
+	});
 
 	var row = $('<div>',{
-		class: 'row container'
+		class: 'row container bg-gray'
 	});
 
 	var containerSelect = $('<div>',{
-		class: 'col-md-6'
+		class: 'col-md-6 containerSelect'
 	});
 
 	var label = $('<label>',{
+		id: 'label-select',
 		html:'Elige tu sede: '
 	});
 
@@ -50,11 +53,11 @@ function select (update) {
 		.append(select);
 
 	var containerPoints = $('<div>',{
-		class: 'col-md-6'
+		class: 'col-md-6 containerPoints'
 	});
 
 	var contador = $('<p>',{
-		html:' puntos.'
+		html:'Puntos : '
 	});
 
 	var spanDinamico = $('<span>',{

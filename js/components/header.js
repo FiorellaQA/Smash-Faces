@@ -1,10 +1,12 @@
 'use strict';
 
 function header () {
-	var container = $('<header>');
+	var container = $('<header>',{
+		id:'app-header'
+	});
 
 	var row = $('<div>',{
-		class: 'row container'
+		class: 'row container bg-gray'
 	});
 
 	var col = $('<div>',{
